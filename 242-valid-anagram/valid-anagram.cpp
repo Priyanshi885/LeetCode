@@ -17,8 +17,8 @@ public:
         }
 
         //check if all frequencies are equal
-        for(auto x:mp){
-            if(x.second!=0)
+        for(auto x:mp){    //visit every key value pair in map one by one
+            if(x.second!=0)  //x.first = key, x.second = value(frequency)
             return false;
         }
         return true;
