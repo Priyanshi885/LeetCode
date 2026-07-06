@@ -5,20 +5,20 @@ public:
             return false;
         }
 
-        vector<int>count(26,0);
+        unordered_map<char,int> mp;
         //increase frequency using first string
         for(int i=0; i<s.size(); i++){
-            count[s[i]-'a']++;
+            mp[s[i]]++;
         }
 
         //decrease frequency using second string
         for(int i=0; i<t.size(); i++){
-            count[t[i]-'a']--;
+            mp[t[i]]--;
         }
 
         //check if all frequencies are equal
-        for(int i=0; i<26; i++){
-            if(count[i]!=0)
+        for(auto x:mp){
+            if(x.second!=0)
             return false;
         }
         return true;
