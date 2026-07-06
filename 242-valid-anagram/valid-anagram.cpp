@@ -1,20 +1,26 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        unordered_map<char,int>m1;
-        unordered_map<char,int>m2;
-
-        if(s.size()!=t.size())
-        return false;
-        
-        for(int i=0; i<s.size(); i++){
-            m1[s[i]]++;
-            m2[t[i]]++;
+        if(s.size()!=t.size()){
+            return false;
         }
 
-        if(m1==m2)
+        vector<int>count(26,0);
+        //increase frequency using first string
+        for(int i=0; i<s.size(); i++){
+            count[s[i]-'a']++;
+        }
+
+        //decrease frequency using second string
+        for(int i=0; i<t.size(); i++){
+            count[t[i]-'a']--;
+        }
+
+        //check if all frequencies are equal
+        for(int i=0; i<26; i++){
+            if(count[i]!=0)
+            return false;
+        }
         return true;
-        else
-        return false;
     }
 };
