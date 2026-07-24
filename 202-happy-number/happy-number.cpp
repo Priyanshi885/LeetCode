@@ -11,16 +11,13 @@ int fun(int n){
 }
 
     bool isHappy(int n) {
-        int slow=n;
-        int fast=n;
-
-        while(fast!=1){
-            slow=fun(slow);
-            fast=fun(fast);
-            fast=fun(fast);
-
-            if(slow==fast && slow!=1)
+        unordered_set<int>st;
+        while(n!=1){
+            if(st.count(n))
             return false;
+
+            st.insert(n);
+            n=fun(n);
         }
         return true;
     }
