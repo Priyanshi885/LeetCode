@@ -13,7 +13,7 @@ int fun(int n){
     bool isHappy(int n) {
         unordered_set<int>st;
         while(n!=1){
-            if(st.count(n))
+            if(st.count(n)==1)
             return false;
 
             st.insert(n);
