@@ -12,8 +12,8 @@ public:
             max2=max1;
             max1=digit;
         }
-        else {
-            max2=max(digit,max2);
+        else if(digit> max2) {
+            max2=digit;
         }
         }
         return max1*max2;
