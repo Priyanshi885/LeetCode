@@ -8,7 +8,7 @@ public:
         for(int i=0; i<n; i++){
             if(st.empty()){ //if stack is empty then no element for comparison just push it
                 st.push(s[i]);
-                continue;
+                continue; //skip the remaining code in this iteration and move to the next character
             }
             
             if(st.top()==s[i]){ //agar tos =  current element don't push that and remove tos
