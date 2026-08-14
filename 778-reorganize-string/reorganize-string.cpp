@@ -5,6 +5,14 @@ public:
         for(char c:s){
             mp[c]++;
         }
+        int n=s.size();
+        int maxFreq=0;
+        for(auto x:mp){
+            maxFreq=max(maxFreq,x.second);
+        }
+        if(maxFreq>(n+1)/2){
+            return "";
+        }
 
         priority_queue<pair<int,int>>pq;
         for(auto x:mp){
@@ -35,9 +43,6 @@ public:
         if(!pq.empty()){
             auto last=pq.top();
             pq.pop();
-            if(last.first>1){
-                return "";
-            }
             ans+=last.second;
         }
         return ans;   
