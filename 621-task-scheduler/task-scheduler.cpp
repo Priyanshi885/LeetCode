@@ -26,8 +26,8 @@ public:
                     break;
                 }
             }
-            for(int freq:temp){
-                pq.push(freq);
+            for(int rem:temp){
+                pq.push(rem);
             }
         }
         return time;    
