@@ -24,9 +24,13 @@ public:
         for(int i=1; i<travel.size(); i++){
             travel[i]+=travel[i-1];
         }
-        time += M_idx>0 ? travel[M_idx-1] : 0;
-        time += P_idx>0 ? travel[P_idx-1] : 0;
-        time += G_idx>0 ? travel[G_idx-1] : 0;
+        if(M_idx>0)
+        time += travel[M_idx-1];
+        if(P_idx>0)
+        time += travel[P_idx-1];
+        if(G_idx>0)
+        time += travel[G_idx-1];
+        
         return time;
     }
 };
