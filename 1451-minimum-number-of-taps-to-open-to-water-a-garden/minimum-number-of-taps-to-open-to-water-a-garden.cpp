@@ -21,7 +21,7 @@ public:
                 taps++;
                 currentEnd=farthest;
 
-                if(currentEnd >=n)
+                if(currentEnd ==n)
                 return taps;
             }
         }
