@@ -11,13 +11,13 @@ public:
 
         int count=1;
         int time_passed=1;
-        
+
         for(int i=1; i<n; i++){
             if(time[i]-time_passed <=0){
                 return count;
             }
-            count+=1;
-            time_passed+=1;
+            count++;
+            time_passed++;
         }
         return count;
     }
