@@ -18,7 +18,7 @@ public:
                     break;
                 }
             }
-            if(special==true)
+            if(special)
             ans++;
         }
         return ans;
