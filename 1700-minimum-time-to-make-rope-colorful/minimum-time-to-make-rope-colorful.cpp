@@ -11,7 +11,7 @@ public:
                 prev=max(prev,neededTime[i]);
             }
             else{
-                prev=neededTime[i];
+                prev=neededTime[i]; //diff color strt with new grp
             }
         }
         return ans;
