@@ -10,8 +10,9 @@ public:
             if(remainder==6){
                 placeValueSix=placeValue;
             }
-            temp=temp/10;
+            
             placeValue++;
+            temp=temp/10;
         }
 
         if(placeValueSix == -1)
