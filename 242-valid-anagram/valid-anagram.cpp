@@ -1,25 +1,22 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        if(s.size()!=t.size()){
+        if(s.length()!=t.length()){
             return false;
         }
 
-        unordered_map<char,int> mp;
-        //increase frequency using first string
-        for(int i=0; i<s.size(); i++){
-            mp[s[i]]++;
+        int freq[26]={0};
+        for(char c:s){
+            freq[c-'a']++;
         }
-
-        //decrease frequency using second string
-        for(int i=0; i<t.size(); i++){
-            mp[t[i]]--;
+        for(char c:t){
+            freq[c-'a']--;
         }
-
-        //check if all frequencies are equal
-        for(auto x:mp){    //visit every key value pair in map one by one
-            if(x.second!=0)  //x.first = key, x.second = value(frequency)
-            return false;
+        
+        for(int i=0; i<26; i++){
+            if(freq[i]!=0){
+                return false;
+            }
         }
         return true;
     }
